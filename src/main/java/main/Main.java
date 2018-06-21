@@ -1,5 +1,6 @@
 package main;
 
+import main.mapper.RealTimePrice;
 import main.mapper.RealTimePriceMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -17,7 +18,8 @@ public class Main {
         SqlSession session = sqlSessionFactory.openSession();
         try {
             RealTimePriceMapper mapper = session.getMapper(RealTimePriceMapper.class);
-            mapper.getPriceById(1);
+            RealTimePrice realTimePrice = mapper.getPriceById(11);
+            RealTimePrice realTimePrice1 = mapper.getPriceById(11);
 
         } finally {
             session.close();
